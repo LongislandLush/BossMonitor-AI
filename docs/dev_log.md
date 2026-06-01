@@ -80,3 +80,37 @@ This appears related to the webcam audio endpoint and does not affect image capt
 
 Phase 1 - SBC Camera Bring-up:
 SUCCESS
+
+# 2026/06/01
+
+## OpenCV Bring-up
+
+### Progress
+
+- Installed OpenCV 4.6.0 on Orange Pi Zero
+- Verified cv2 module installation
+- Successfully opened Logitech C270 using OpenCV
+- Captured image using Python
+- Saved image as capture.jpg
+
+### Commands Learned
+
+```bash
+python3 camera_test.py
+```
+
+### Notes
+
+Observed GStreamer warning:
+
+```text
+GStreamer: pipeline have not been created
+```
+
+The warning did not affect image capture.
+OpenCV successfully fell back to V4L2 and saved capture.jpg.
+
+### Status
+
+Phase 2 - OpenCV Camera Control:
+SUCCESS
