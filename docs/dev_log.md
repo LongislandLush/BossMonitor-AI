@@ -114,3 +114,63 @@ OpenCV successfully fell back to V4L2 and saved capture.jpg.
 
 Phase 2 - OpenCV Camera Control:
 SUCCESS
+
+# 2026/06/03
+
+## Camera Capability Verification
+
+### Progress
+
+- Created camera_info.py
+- Verified Logitech C270 camera resolution
+- Verified reported FPS from OpenCV
+- Measured actual capture performance on Orange Pi Zero
+
+### Results
+
+```text
+Resolution : 640x480
+Reported FPS : 30
+Actual FPS : 21.82
+```
+
+### Findings
+
+- OpenCV successfully opened Logitech C270
+- Actual FPS is lower than reported FPS due to Orange Pi Zero processing limitations
+- 21.82 FPS is sufficient for motion detection applications
+
+### Status
+
+Phase 3 - Camera Capability Verification:
+SUCCESS
+
+# 2026/06/03
+
+## Motion Detection
+
+### Progress
+
+- Created motion_detect.py
+- Implemented frame difference motion detection
+- Added event image saving
+- Added timestamp-based filenames
+
+### Results
+
+Motion detection successfully triggered on scene changes.
+
+Example:
+
+Motion detected!
+Saved: motion_20260603_211833.jpg
+
+### Findings
+
+Current implementation repeatedly triggers while motion continues.
+
+Future improvement:
+
+- Motion event debounce
+- Event cooldown timer
+- Event logging
